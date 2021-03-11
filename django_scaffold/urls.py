@@ -20,6 +20,8 @@ from rest_framework import routers
 from apis.user.views import UserViewSet
 from apis.user.views import GroupViewSet
 
+import xadmin
+xadmin.autodiscover()
 
 router = routers.DefaultRouter()
 router.register(r'user', UserViewSet)
@@ -27,6 +29,7 @@ router.register(r'group', GroupViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('xadmin/', xadmin.site.urls),
     path('', include(router.urls)),
     path('api-auth', include('rest_framework.urls', namespace='rest_framework'))
 ]
