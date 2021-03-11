@@ -4,6 +4,7 @@ diff-match-patch==20200713
 Django==3.1.7
 django-crispy-forms==1.11.1
 django-formtools==2.2
+django-guardian==2.3.0
 django-import-export==2.5.0
 djangorestframework==3.12.2
 et-xmlfile==1.0.1

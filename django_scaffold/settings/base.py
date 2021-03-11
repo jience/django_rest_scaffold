@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
+    'guardian',
     'xadmin',
     'crispy_forms',
 
@@ -127,6 +128,12 @@ STATIC_URL = '/static/'
 
 
 AUTH_USER_MODEL = "user.User"
+
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'guardian.backends.ObjectPermissionBackend',
+)
 
 
 # Django REST Framework

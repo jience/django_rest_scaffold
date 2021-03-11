@@ -1,12 +1,13 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.utils.translation import gettext_lazy as _
+from guardian.admin import GuardedModelAdmin
 
 from .models import User
 
 
 @admin.register(User)
-class UserAdmin(UserAdmin, admin.ModelAdmin):
+class UserAdmin(UserAdmin, GuardedModelAdmin):
     list_display = ('username', 'email', 'date_joined', 'is_staff', 'updated_at')
     fieldsets = (
         (None, {'fields': ('username', 'password')}),
