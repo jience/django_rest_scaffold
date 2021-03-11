@@ -127,3 +127,13 @@ STATIC_URL = '/static/'
 
 
 AUTH_USER_MODEL = "user.User"
+
+
+# Django REST Framework
+REST_FRAMEWORK = {
+    # 权限全局配置
+    'DEFAULT_PERMISSION_CLASSES': [
+        'libs.utils.permissions.CustomModelPermissions',
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+}
