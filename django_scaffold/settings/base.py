@@ -139,6 +139,12 @@ AUTHENTICATION_BACKENDS = (
 
 # Django REST Framework
 REST_FRAMEWORK = {
+    # 全局认证
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication'
+    ],
     # 权限全局配置
     'DEFAULT_PERMISSION_CLASSES': [
         'libs.utils.permissions.CustomModelPermissions',
