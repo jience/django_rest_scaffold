@@ -38,6 +38,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'guardian',
+    'django_filters',
     'xadmin',
     'crispy_forms',
 
@@ -153,4 +154,9 @@ REST_FRAMEWORK = {
     'DEFAULT_VERSION': 'v1',
     'ALLOWED_VERSIONS': ['v1', 'v2'],
     'VERSION_PARAM': 'version',
+
+    # 配置全局过滤器
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend',
+    ],
 }
