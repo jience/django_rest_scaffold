@@ -14,7 +14,13 @@ python manage.py migrate
 python manage.py createsuperuser --email admin@example.com --username admin
 ```
 
-### 3、Run project in development environment
+### 3、Install requirements
+```bash
+pip install -r requirements.txt
+```
+
+
+### 4、Run project in development environment
 ```bash
 python manage.py runserver
 ```
