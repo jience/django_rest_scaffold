@@ -145,6 +145,14 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ],
 
+    # 全局异常模块
+    'EXCEPTION_HANDLER': 'libs.utils.exception.custom_exception_handler',
+    # 全局渲染器
+    'DEFAULT_RENDERER_CLASSES': [
+        'libs.utils.renderer.CustomRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ],
+
     # 配置全局的分页
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 5,
