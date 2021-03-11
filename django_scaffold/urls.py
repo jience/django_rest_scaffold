@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include, re_path
 from rest_framework import routers
@@ -38,3 +39,9 @@ urlpatterns = [
     path('oauth2/', include('oauth2_provider.urls', namespace='oauth2_provider')),
     path('api-auth', include('rest_framework.urls', namespace='rest_framework'))
 ]
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns += [
+        path('__debug__/', include(debug_toolbar.urls)),
+    ]
