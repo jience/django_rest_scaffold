@@ -143,4 +143,8 @@ REST_FRAMEWORK = {
         'libs.utils.permissions.CustomModelPermissions',
         'rest_framework.permissions.IsAuthenticated',
     ],
+
+    # 配置全局的分页
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 5,
 }
