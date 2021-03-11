@@ -35,5 +35,6 @@ urlpatterns = [
     path('api/token/', token_obtain_pair, name='token_obtain_pair'),
     path('api/token/refresh/', token_refresh, name='token_refresh'),
     path('api/token/verify/', token_verify, name='token_verify'),
+    path('oauth2/', include('oauth2_provider.urls', namespace='oauth2_provider')),
     path('api-auth', include('rest_framework.urls', namespace='rest_framework'))
 ]

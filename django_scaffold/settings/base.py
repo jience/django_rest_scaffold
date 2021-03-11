@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'oauth2_provider',
     'rest_framework',
     'guardian',
     'django_filters',
@@ -137,13 +138,20 @@ AUTHENTICATION_BACKENDS = (
 )
 
 
+OAUTH2_PROVIDER = {
+    # this is the list of available scopes
+    'SCOPES': {'read': 'Read scope', 'write': 'Write scope', 'groups': 'Access to your groups'}
+}
+
+
 # Django REST Framework
 REST_FRAMEWORK = {
     # 全局认证
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
-        'rest_framework_simplejwt.authentication.JWTAuthentication'
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
     ],
     # 权限全局配置
     'DEFAULT_PERMISSION_CLASSES': [
