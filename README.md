@@ -24,3 +24,20 @@ pip install -r requirements.txt
 ```bash
 python manage.py runserver
 ```
+
+
+
+## Features
+
+- JWT
+- OAuth2
+- Pagination
+- Versioning
+- Filtering
+- Custom Exception
+- Custom Permission
+- Custom Renderer
+- Response
+- XAdmin
+- Model Permission
+- Object Permission
